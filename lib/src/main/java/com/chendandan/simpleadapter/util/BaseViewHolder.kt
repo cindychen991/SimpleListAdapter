@@ -13,12 +13,12 @@ import android.widget.TextView
  */
 open class BaseViewHolder {
 
-    open lateinit var mItemView: View
+    open var mItemView: View
     open val holderViews: SparseArray<View> by lazy {
         SparseArray<View>()
     }
 
-    fun BaseViewHolder(convertView: View?) {
+    constructor(convertView: View?) {
         if (convertView == null) {
             throw NullPointerException("convertView can not be null !")
         }

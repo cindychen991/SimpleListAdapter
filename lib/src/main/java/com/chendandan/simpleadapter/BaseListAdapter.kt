@@ -40,4 +40,18 @@ abstract class BaseListAdapter<T, H : BaseViewHolder> : BaseAdapter, ItemHolderC
         bindData(position, holderHelper, mList[position])
         return convertView!!
     }
+
+    override fun getCount(): Int {
+        return mList.size
+    }
+
+    override fun getItem(position: Int): T? {
+        return if (position > mList.size - 1) {
+            null
+        } else mList[position]
+    }
+
+    override fun getItemId(position: Int): Long {
+        return position.toLong()
+    }
 }
