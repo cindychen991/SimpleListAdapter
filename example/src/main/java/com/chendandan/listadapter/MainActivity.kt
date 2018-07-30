@@ -25,10 +25,8 @@ class MainActivity : Activity() {
     }
 
     private fun initData() {
-        var size = 0
-        while (size <= 8) {
-            list.add("Hi! It's $size")
-            size += 1
+        (0 until 9).mapTo(list) {
+            "Hi! It's $it"
         }
         adapter.notifyDataSetChanged()
     }
